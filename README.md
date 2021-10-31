@@ -14,6 +14,9 @@ This project is developed as a server side of a tourism website. All data are sa
 - API has been developed here to add, delete and modify data.
 - I have used express JS to developed the API.
 - I have used HeroKu to deploy the server. 
+
+
+
 ## List of developed API:
 - GET API to get list of all packages\
     https://fathomless-oasis-64789.herokuapp.com/allpackages
@@ -39,6 +42,11 @@ This project is developed as a server side of a tourism website. All data are sa
     https://fathomless-oasis-64789.herokuapp.com/booking/updateStatus/:id
 
 
+## Development Features:
+- Node JS is used to develop this project.
+- Express Js is used to move data from client side to serverside. as well - as server side to client side.
+- MongoDB Atlas is used to store data and served to Client side. 
+- Heroku is used to deploy this project. 
 
 
 ## Authors
