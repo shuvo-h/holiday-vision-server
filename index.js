@@ -67,6 +67,14 @@ async function run(){
             res.json(blogs)
         })
 
+        // GET API (single blog by ID)
+        app.get('/blogs/:id',async(req,res)=>{
+            const {id} = req.params;
+            const query = {_id:ObjectId(id)}
+            const blog = await blogsCollection.findOne(query)
+            res.json(blog)
+        })
+
         // GET API (all bookings)
         app.get('/all-bookings',async(req,res)=>{
             const query = {};
@@ -83,16 +91,7 @@ async function run(){
             const bookingList = await cursor.toArray();
             res.json(bookingList)
         })
-/*
-        // GET API (single booking by ID)
-        app.get('/booking/:id',async(req,res)=>{
-            const {id} = req.params;
-            const query = {_id:ObjectId(id)}
-            const package = await bookingCollection.findOne(query)
-            console.log(package);
-            res.json(package)
-        })
-*/
+
         // POST API (insert booking information)
         app.post('/booking', async(req,res)=>{
             const booking = req.body;
@@ -128,8 +127,7 @@ run().catch(console.dir);
 
 // initial test server run 
 app.get('/',(req,res)=>{
-    console.log("Running server");
-    res.send("i am server")
+    res.send("Running Holiday Vision Server!")
 })
 // port listen  
 app.listen(port,()=>{
